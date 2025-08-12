@@ -40,7 +40,7 @@ public class Service {
     public User signUp(String name, String email, String password) {
         return sessionFactory.fromTransaction(session -> {
             List<User> existingUsers = session.createNativeQuery(
-                            "SELECT * FROM app_user WHERE email = :email", User.class)  // اصلاح نام جدول
+                            "SELECT * FROM app_user WHERE email = :email", User.class)  
                     .setParameter("email", checkEmail(email))
                     .getResultList();
 
