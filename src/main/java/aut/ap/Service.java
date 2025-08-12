@@ -89,19 +89,6 @@ public class Service {
         });
     }
 
-    private User getUserByEmail(String email) {
-        return sessionFactory.fromTransaction(session -> {
-            List<User> users = session.createNativeQuery(
-                            "SELECT * FROM app_user WHERE email = :email", User.class)  
-                    .setParameter("email", email)
-                    .getResultList();
-
-            if (users.size() == 1) {
-                return users.get(0);
-            }
-            return null;
-        });
-    }
 
     public List<Email> getAllEmails(String userEmail) {
         return sessionFactory.fromTransaction(session ->
