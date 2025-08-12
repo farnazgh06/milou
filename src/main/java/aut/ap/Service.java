@@ -62,7 +62,7 @@ public class Service {
     public User login(String email, String password) {
         return sessionFactory.fromTransaction(session -> {
             List<User> users = session.createNativeQuery(
-                            "SELECT * FROM app_user WHERE email = :email AND password = :password", User.class)  // اصلاح نام جدول
+                            "SELECT * FROM app_user WHERE email = :email AND password = :password", User.class) 
                     .setParameter("email", checkEmail(email))
                     .setParameter("password", password)
                     .getResultList();
@@ -92,7 +92,7 @@ public class Service {
     private User getUserByEmail(String email) {
         return sessionFactory.fromTransaction(session -> {
             List<User> users = session.createNativeQuery(
-                            "SELECT * FROM app_user WHERE email = :email", User.class)  // اصلاح نام جدول
+                            "SELECT * FROM app_user WHERE email = :email", User.class)  
                     .setParameter("email", email)
                     .getResultList();
 
