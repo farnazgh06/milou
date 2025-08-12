@@ -62,12 +62,12 @@ public class Main {
     private void showMainMenu() {
         List<Email> unreadEmails = service.getUnreadEmails(currentUser.getEmail());
         if (!unreadEmails.isEmpty()) {
-            System.out.println("\n--- You have unread Milous! ---");
+            System.out.println("\n You have unread Milous! ");
             displayEmails(unreadEmails, "unread");
         }
 
         while (currentUser != null) {
-            System.out.println("\n--- Main Menu ---");
+            System.out.println("\n Menu ");
             System.out.println("[S]end, [V]iew, [R]eply, [F]orward, [L]ogout");
             System.out.print("Enter your order: ");
             String order = scanner.nextLine().toUpperCase();
@@ -149,7 +149,7 @@ public class Main {
                     break;
                 case "S":
                     List<Email> sentEmails = service.getSentEmails(currentUser.getEmail());
-                    System.out.println("--- Sent Milous ---");
+                    System.out.println(" Sent Milous :");
                     displayEmails(sentEmails, "sent");
                     break;
                 case "C":
