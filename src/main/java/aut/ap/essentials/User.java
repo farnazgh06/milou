@@ -1,4 +1,3 @@
-
 package aut.ap.essentials;
 
 import jakarta.persistence.*;
